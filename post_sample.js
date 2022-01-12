@@ -27,7 +27,8 @@ async function makeGetRequest(payload) {
   let data = res.data;
   // Data returns a dictionary and in the 'predictions' key there's a list with 1 item. The item contains 'labels' and 'probabilities' keys.
   // Label value of 0 means non-stress, and 1 means stress.
-  console.log(CLASSES[data['predictions'][0]['labels']]) 
+  console.log("Label : " + CLASSES[data['predictions'][0]['labels']])
+  console.log("Probability Vectors : " + data['predictions'][0]['probabilities'])
 }
 
 const sampleText = "Man I'm so lazy today and just want to sleep all day. I don't feel like doing anything after that breakup.";

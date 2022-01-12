@@ -15,7 +15,7 @@ To setup the environment, please follow these steps:
 
 - Create a new conda virtual environment in local or cloud services
 ```
-conda create -n quick_check python=3.6
+conda create -n quick_check python=3.6 anaconda
 conda activate quick_check
 ```
 - Clone the github repository

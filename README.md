@@ -27,8 +27,12 @@ cd quick-check/build
 conda install pip
 pip install -r requirements.txt
 ```
-
-
+### Install Tensorflow Model Server
+- Install Tensorflow Model Server (For Debian based distro). Since this project uses Tensorflow 1.15, it's better to use same version for serving.
+```
+wget 'http://storage.googleapis.com/tensorflow-serving-apt/pool/tensorflow-model-server-1.15.0/t/tensorflow-model-server/tensorflow-model-server_1.15.0_all.deb'
+dpkg -i tensorflow-model-server_1.15.0_all.deb
+```
 
 ## Reference
 - [BERT - REST Inference from the fine-tuned model](https://medium.com/delvify/bert-rest-inference-from-the-fine-tuned-model-499997b32851)

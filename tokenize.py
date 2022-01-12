@@ -1,14 +1,12 @@
 import json
 import os
 from bert import tokenization
-import requests
 
 def tokenize(input_string, vocab_file):
   tokenizer = tokenization.FullTokenizer(vocab_file=vocab_file)
   token_a = tokenizer.tokenize(input_string)
 
   tokens = []
-  segments_ids = []
   tokens.append("[CLS]")
   segment_ids = []
   segment_ids.append(0)
@@ -31,12 +29,12 @@ def tokenize(input_string, vocab_file):
   data = json.dumps({"signature_name":"serving_default", "instances":instances})
   return data
 
+# import requests
 
-
-headers = {"content-type":"application-json"}
-endpoints = "http://192.168.11.9:8501/v1/models/quick_check:predict"
-input_string = "Man I'm so lazy today and just want to sleep all day. I don't feel like doing anything after that breakup."
-vocab_file = "assets/vocab.txt"
-response = requests.post(endpoints, data=tokenize(input_string, vocab_file), headers=headers)
-prediction = json.loads(response.text)
-print(prediction)
+# headers = {"content-type":"application-json"}
+# endpoints = "http://192.168.11.9:8501/v1/models/quick_check:predict"
+# input_string = "Man I'm so lazy today and just want to sleep all day. I don't feel like doing anything after that breakup."
+# vocab_file = "assets/vocab.txt"
+# response = requests.post(endpoints, data=tokenize(input_string, vocab_file), headers=headers)
+# prediction = json.loads(response.text)
+# print(prediction)

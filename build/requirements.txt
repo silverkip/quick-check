@@ -1,0 +1,5 @@
+pandas
+numpy
+scikit-learn
+tensorflow==1.15
+bert-tensorflow==1.0.1

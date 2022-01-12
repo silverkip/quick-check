@@ -39,4 +39,4 @@ input_string = "Man I'm so lazy today and just want to sleep all day. I don't fe
 vocab_file = "assets/vocab.txt"
 response = requests.post(endpoints, data=tokenize(input_string, vocab_file), headers=headers)
 prediction = json.loads(response.text)
-print(prediction)
+print(prediction['predictions'][0]['labels'])

@@ -1,7 +1,7 @@
 const {BertTokenizer} = require('bert-tokenizer');
 const axios = require('axios')
 
-const CLASSES = ["Non-stress", "Stress"]
+const CLASSES = ["Non-stress", "Stress"] // For label value
 
 const vocabUrl = 'node_modules/bert-tokenizer/assets/vocab.json'
 const bertTokenizer = new BertTokenizer(vocabUrl, true);
@@ -25,7 +25,9 @@ async function makeGetRequest(payload) {
   let res = await axios.post('http://192.168.11.9:8501/v1/models/quick_check:predict', payload);
   
   let data = res.data;
-  console.log(CLASSES[data['predictions'][0]['labels']])
+  // Data returns a dictionary and in the 'predictions' key there's a list with 1 item. The item contains 'labels' and 'probabilities' keys.
+  // Label value of 0 means non-stress, and 1 means stress.
+  console.log(CLASSES[data['predictions'][0]['labels']]) 
 }
 
 const sampleText = "Man I'm so lazy today and just want to sleep all day. I don't feel like doing anything after that breakup.";

@@ -1,1 +1,4 @@
 output/**
+bert_output/**
+__pycache__
+.config

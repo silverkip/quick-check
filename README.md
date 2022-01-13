@@ -72,4 +72,5 @@ tensorflow_model_server --port=8500 --rest_api_port=8501 --model_name=quick_chec
 - [Predicting Movie Reviews with BERT on TF Hub](https://colab.research.google.com/github/google-research/bert/blob/master/predicting_movie_reviews_with_bert_on_tf_hub.ipynb)
 - [Dreaddit: A Reddit Dataset for Stress Analysis in Social Media](https://arxiv.org/abs/1911.00133)
 - [TensorFlow Serving with Docker](https://www.tensorflow.org/tfx/serving/docker)
+- [Deploy your Tensorflow models on Heroku with a button click](https://towardsdatascience.com/deploy-your-tensorflow-models-on-heroku-with-a-button-click-4fbb0252f870)
 

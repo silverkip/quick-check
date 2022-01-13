@@ -5,7 +5,7 @@ from bert import tokenization
 def tokenize(input_string, vocab_file):
   tokenizer = tokenization.FullTokenizer(vocab_file=vocab_file)
   token_a = tokenizer.tokenize(input_string)
-
+  
   tokens = []
   tokens.append("[CLS]")
   segment_ids = []
@@ -22,8 +22,6 @@ def tokenize(input_string, vocab_file):
       input_ids.append(0)
       input_mask.append(0)
       segment_ids.append(0)
-
-
   label_id = 0
   instances = [{"input_ids":input_ids, "input_mask":input_mask, "segment_ids":segment_ids, "label_ids":label_id}]
   data = json.dumps({"signature_name":"serving_default", "instances":instances})
@@ -33,7 +31,8 @@ import requests
 
 
 headers = {"content-type":"application-json"}
-endpoints = "http://192.168.11.9:8501/v1/models/quick_check:predict"
+endpoints = "https://quick-check-api.herokuapp.com/v1/models/quick_check:predict"
+
 input_string = "Man I'm so lazy today and just want to sleep all day. I don't feel like doing anything after that breakup."
 vocab_file = "assets/vocab.txt"
 response = requests.post(endpoints, data=tokenize(input_string, vocab_file), headers=headers)

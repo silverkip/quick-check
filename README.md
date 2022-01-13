@@ -72,7 +72,7 @@ tensorflow_model_server --port=8500 --rest_api_port=8501 --model_name=quick_chec
 API Link (Hosted on Heroku) : https://quick-check-app.herokuapp.com/v1/models/quick-check:predict
 Since the SavedModel doesn't include preprocessing, we have to do it before sending the POST request to the server. The request_sample files provided shows two samples on how to make a request to the API server in Python and Node.js. These files also include a function that does the preprocessing.
 
-### API's Output Structure
+### API's Input Structure
 The API takes JSON input in this specific format. 
 ```
 {

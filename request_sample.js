@@ -22,7 +22,8 @@ function tokenizeInput(inputText) {
 }
 
 async function makeGetRequest(payload) {
-  let res = await axios.post('http://192.168.11.9:8501/v1/models/quick_check:predict', payload);
+  // let res = await axios.post('http://192.168.11.9:8501/v1/models/quick_check:predict', payload);
+  let res = await axios.post('https://quick-check-app.herokuapp.com/v1/models/quick-check:predict', payload);
   
   let data = res.data;
   // Data returns a dictionary and in the 'predictions' key there's a list with 1 item. The item contains 'labels' and 'probabilities' keys.

@@ -1,5 +1,5 @@
 # Quick Check Stress Detection 
-This is an api that takes training data from Dreaddit database for mental health detection in texts. The idea is to train a NLP model to help supplement mental health apps with stress detection through user's texts inputs. The API is meant to be simple as it only have one function, to give prediction on whether the user is stressed or not based on the text input.
+This is an API that takes training data from Dreaddit database for mental health detection in texts. The idea is to train a NLP model to help supplement mental health apps with stress detection through user's texts inputs. The API is meant to be simple as it only have one function, to give prediction on whether the user is stressed or not based on the text input.
 
 ## Prerequisites
 - MacOS or Linux

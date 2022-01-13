@@ -1,5 +1,5 @@
-const {BertTokenizer} = require('bert-tokenizer');
-const axios = require('axios')
+const {BertTokenizer} = require('bert-tokenizer'); // npm install bert-tokenizer
+const axios = require('axios') // npm install axios
 
 const CLASSES = ["Non-stress", "Stress"] // For label value
 
@@ -21,6 +21,7 @@ function tokenizeInput(inputText) {
   return data;
 }
 
+// Axios is used to make the POST request here as example but any HTTP request package should work as well
 async function makeGetRequest(payload) {
   // let res = await axios.post('http://localhost:8501/v1/models/quick_check:predict', payload);
   let res = await axios.post('https://quick-check-api.herokuapp.com/v1/models/quick_check:predict', payload);
